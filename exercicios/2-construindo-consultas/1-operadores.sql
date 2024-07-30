@@ -1,6 +1,73 @@
--- Construa uma consulta para a tabela "invoice_items" que retorne apenas as colunas InvoiceId, TrackId e UnitPrice.
+SELECT 
+TrackId,
+UnitPrice,
+UnitPrice * 1.3
+FROM
+invoice_items;
 
--- Inclua nessa consulta mais três colunas, cada uma como resultado de uma operação aritmética diferente
+SELECT 
+TrackId,
+UnitPrice,
+UnitPrice * 1.3,
+UnitPrice + 2.11
+FROM
+invoice_items;
 
--- Incremente essa consulta utilizando a cláusula WHERE, a qual restringirá o resultado apenas para linhas cujo o InvoiceId seja maior do que 20 e menor ou igual a 30
+--Utilizando o operador de módulo
+SELECT 
+TrackId,
+UnitPrice,
+UnitPrice * 1.3,
+UnitPrice + 2.11,
+(UnitPrice + 2.11) % 2
+FROM
+invoice_items;
 
+--Usando operadores relativos
+SELECT 
+TrackId,
+UnitPrice,
+UnitPrice * 1.3,
+UnitPrice + 2.11,
+(UnitPrice + 2.11) % 2
+FROM
+invoice_items
+WHERE InvoiceId = 3;
+
+--Operador diferete !=
+
+--Operador Lógios
+--Operador AND
+SELECT 
+TrackId,
+UnitPrice,
+UnitPrice * 1.3,
+UnitPrice + 2.11,
+(UnitPrice + 2.11) % 2
+FROM
+invoice_items
+WHERE InvoiceId > 3
+AND InvoiceId !=10;
+
+--Operador OR
+SELECT 
+TrackId,
+UnitPrice,
+UnitPrice * 1.3,
+UnitPrice + 2.11,
+(UnitPrice + 2.11) % 2
+FROM
+invoice_items
+WHERE InvoiceId = 1
+OR InvoiceId > 3;
+
+--Operador NOT
+SELECT 
+TrackId,
+UnitPrice,
+UnitPrice * 1.3,
+UnitPrice + 2.11,
+(UnitPrice + 2.11) % 2
+FROM
+invoice_items
+WHERE NOT InvoiceId = 1;
