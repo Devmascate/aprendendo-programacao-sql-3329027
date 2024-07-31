@@ -1,7 +1,32 @@
--- Desenvolva uma consulta para a tabela "customers" que retorne apenas 10 linhas
+SELECT
+CustomerId as id,
+FirstName as nome,
+Country as país
+FROM
+customers
+ORDER BY 
+país ASC
+LIMIT 10;
 
+--Retirando os primeiros 3
+SELECT
+CustomerId as id,
+FirstName as nome,
+Country as país
+FROM
+customers
+ORDER BY 
+país ASC
+LIMIT 10 OFFSET 3;
 
--- Usando a consulta anterior, ordene a coluna "Country" de forma crescente e "FirstName" de forma decrescente
-
-
--- Continue usando a consulta anterior, dessa vez retorne 10 resultados, no entando ignore as 3 primeiras linhas
+--Ordenar com Desc
+SELECT
+CustomerId as id,
+FirstName as nome,
+Country as país
+FROM
+customers
+ORDER BY 
+país ASC,
+nome DESC
+LIMIT 10;
